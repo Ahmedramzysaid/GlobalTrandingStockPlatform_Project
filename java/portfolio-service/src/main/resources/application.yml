@@ -1,0 +1,22 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: portfolio-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/portfolio_db
+    username: gstp_admin
+    password: gstp_secret_2026
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: portfolio-service
+      auto-offset-reset: earliest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

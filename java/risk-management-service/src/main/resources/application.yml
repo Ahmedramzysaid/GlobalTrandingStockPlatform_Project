@@ -1,0 +1,27 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: risk-management-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/risk_db
+    username: gstp_admin
+    password: gstp_secret_2026
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: risk-management
+      auto-offset-reset: earliest
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: gstp_redis_2026
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: settlement-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/settlement_db
+    username: gstp_admin
+    password: gstp_secret_2026
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: settlement-service
+      auto-offset-reset: earliest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
